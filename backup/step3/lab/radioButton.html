@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>RadioButton</title>
+</head>
+
+<body>
+<form>
+	<input type="radio" name="coffee" value="cream" class="coffee">With cream<br>
+	<input type="radio" name="coffee" value="sugar" class="coffee">With sugar<br>
+	<input type="button" onClick="myFunction()" value="Send order"><br>
+	<input type="text" id="order" size="50">
+</form>
+
+
+
+<script>
+	function myFunction(){
+		var coffee = document.getElementsByClassName('coffee');
+		var txt = "";
+		for(var i = 0; i < coffee.length;i++){
+			if(coffee[i].checked){
+				txt = coffee[i].value;
+			}
+		}
+		console.log(txt);
+		document.getElementById('order').value = "You order " + txt;
+	}
+		
+//		var txt = "";
+//		var i;
+//		for(i=0; i< coffee.length; i++){
+//			if(coffee[i].checked){
+//				txt = coffee[i].value;
+//			}
+//			console.log(txt);
+//		}
+//		document.getElementById('order').value = "You order " + txt;
+//	}
+//	
+	
+	
+</script>
+</body>
+</html>
